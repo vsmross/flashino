@@ -7,4 +7,5 @@ variable "region" {
 variable "devInstanceName" {
   type = string
   description = "dev-app-01"
+  default = "dev-app-01"
 }
