@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-2"
+  region = var.region
 }
 
 # Create a instance
@@ -18,7 +18,7 @@ resource "aws_instance" "example" {
   instance_type = terraform.workspace == "prod" ? "t3.large" : "t3.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = var.devInstanceName
   }
 }
 
