@@ -1,11 +1,11 @@
 variable "region" {
-    type = string
-    description = "Aws region for this deploypment"
-    default = "us-east-2"
+  type        = string
+  description = "Aws region for this deploypment"
+  default     = "us-east-2"
 }
 
 variable "devInstanceName" {
-  type = string
+  type        = string
   description = "dev-app-01"
-  default = "dev-app-01"
+  default     = "dev-app-01"
 }
