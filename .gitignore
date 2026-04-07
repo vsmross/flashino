@@ -4,3 +4,6 @@
 *.tfstate
 *.plan
 /.vs
+/src/HotelMan_HotelAdmin/.vs
+/src/HotelMan_HotelAdmin/bin
+/src/HotelMan_HotelAdmin/obj
