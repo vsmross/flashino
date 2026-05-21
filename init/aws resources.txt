@@ -3,3 +3,9 @@ Cognito
 User Pool ID: 			us-east-1_KUGCqUR4I
 App Client ID:			4g1l456kf939fm79thu9m5e02m
 Domain:				https://us-east-1kugcqur4i.auth.us-east-1.amazoncognito.com
+
+
+SNS
+
+Name: 				hotel-creation-topic
+ARN:				arn:aws:sns:us-east-1:172585802317:hotel-creation-topic
