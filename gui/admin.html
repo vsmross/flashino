@@ -41,15 +41,15 @@
             cognitoApp.Init();
             pageLoad();
 
-            //populateHotelsList(currentUserToken.idToken);
+            populateHotelsList(currentUserToken.idToken);
         });
 
         function populateHotelsList(idToken) {
-            var s3BaseUrl="https://hotel-admin-bucket.s3.ap-southeast-2.amazonaws.com";
+            var s3BaseUrl="https://hotel-admin-bucket-vm88.s3.us-east-1.amazonaws.com";
             
             // replace the 'url' attribute below to your API's URL
             $.ajax({
-                url: "<api url here>",
+                url: "https://0qv4fvxsua.execute-api.us-east-1.amazonaws.com/Test/{listadminhotels+}",
                 type:'get',
                 data: {token:idToken},
                 dataType: 'json',
