@@ -149,22 +149,22 @@ public class HotelAdmin
             using var dbContext = new DynamoDBContext(dbClient);
             await dbContext.SaveAsync(hotel);
 
-            // var mapperConfig = new MapperConfiguration(cfg =>
-            //     cfg.CreateMap<Hotel, HotelCreatedEvent>()
-            //         .ForMember(dest => dest.CreationDateTime,
-            //             opt => opt.MapFrom(src => DateTime.Now))
-            // );
+            var mapperConfig = new MapperConfiguration(cfg =>
+                cfg.CreateMap<Hotel, HotelCreatedEvent>()
+                    .ForMember(dest => dest.CreationDateTime,
+                        opt => opt.MapFrom(src => DateTime.Now))
+            );
 
-            // var mapper = new Mapper(mapperConfig);
+            var mapper = new Mapper(mapperConfig);
 
-            // var hotelCreatedEvent = mapper.Map<Hotel, HotelCreatedEvent>(hotel);
+            var hotelCreatedEvent = mapper.Map<Hotel, HotelCreatedEvent>(hotel);
 
-            // var snsClient = new AmazonSimpleNotificationServiceClient();
-            // var publishResponse = await snsClient.PublishAsync(new PublishRequest
-            // {
-            //     TopicArn = Environment.GetEnvironmentVariable("snsTopicArn"),
-            //     Message = JsonSerializer.Serialize(hotelCreatedEvent)
-            // });
+            var snsClient = new AmazonSimpleNotificationServiceClient();
+            var publishResponse = await snsClient.PublishAsync(new PublishRequest
+            {
+                TopicArn = Environment.GetEnvironmentVariable("snsTopicArn"),
+                Message = JsonSerializer.Serialize(hotelCreatedEvent)
+            });
         }
         catch (Exception e)
         {
