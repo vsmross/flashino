@@ -1,1 +1,3 @@
+URL for starting point on MCP in .net use with Anthropic Claude
+
 https://github.com/coredevsushant/mcp.example
