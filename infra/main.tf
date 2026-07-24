@@ -16,3 +16,6 @@ resource "aws_instance" "example" {
 #     name = "dev-vpc-01"
 #   }
 # }
+
+## Few more comments need to add here
+## Need to create modules
